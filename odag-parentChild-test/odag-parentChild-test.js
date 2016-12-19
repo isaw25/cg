@@ -149,11 +149,7 @@ function ( appGenHtml, qvangular, $, RPCSession ) {
                       break;}
                   }while(response1.result.qDocList[++i]);			
                  
-				 
-				 //get app id of child.
-				 
-				 
-				 
+				
                    if(!(PrevId))
 				   {
                     //childName
