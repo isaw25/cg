@@ -1,0 +1,27 @@
+<div style=" overflow:scroll">
+
+<div style='float:left;padding-right:10px'>
+
+
+<label > <strong>Select the Apps</strong></label><br/>
+<select  ng-model="selectedApps" ng-options="app.name for app in apps" multiple></select>
+</div>
+<div>
+
+
+<label > <strong>Select the Users</strong></label>
+<br/>
+<select  ng-model="selectedUser" ng-options="user.id for user in users" multiple></select>
+</div>
+<br/>
+<input type="button" name="CopyNassign" id="CopyNassign" value="Copy and Assign">
+
+<div id="log" style=" overflow:scroll">
+
+selected Apps:
+<label ng-repeat="app in selectedApps"><br/> {{app.name}} </label>
+
+</div>
+
+
+</div>

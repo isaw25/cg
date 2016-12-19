@@ -1,0 +1,17 @@
+{
+	"name": "odag-parentChild-test",
+	"description": "",
+	"type": "visualization",
+	"version": "1.0.2",
+	"icon": "extension",
+	"preview": "pic.png",
+	"author": "Capgemini rHealth",
+	"date": "24-JUN-2016",
+	"homepage": "",
+	"keywords": "qlik-sense, visualization",
+	"license": "",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=1.0.x"
+	}
+}

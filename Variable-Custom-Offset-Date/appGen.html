@@ -1,0 +1,101 @@
+<style>
+table{
+ 
+  
+}
+table, th, td {
+    /*border: 1px solid black;
+	 border-collapse: collapse;
+	 */
+}
+
+.tbl td{
+/*width:55px;*/
+}
+.tbl tr {
+ height:45px;
+}
+label{
+  font-size: 16px;
+  line-height: 1.4;
+}
+.tbl td {
+
+}
+.slct{
+  float:left;
+}
+
+	
+</style>
+
+
+<div style="padding-left:5px">
+<table class="tbl">
+
+<tr>
+  <td> <label>{{IndexDateLabel}}</label></td>
+  <td>
+  <input name="IndexStartDate" type="date"  style="width:75%" min={{IndexRangeStartDate}}   max={{IndexRangeEndDate}} ng-model="mIndexStart" 
+  ng-model-options="{updateOn: 'blur'}" ng-blur="ondateChange('vIndexStartDate',mIndexStart)"/>
+  </td>
+  
+  <td style="width:30px;">
+    <label  class="tolabel"> to </label>
+  </td>
+ 
+  <td>
+  <div >
+  <input name="IndexEndDate" type="date" style="width:75%"  min={{IndexEndDateMin}} max={{IndexRangeEndDate}} ng-model="mIndexEnd" 
+   ng-model-options="{updateOn: 'blur'}" ng-blur="ondateChange('vIndexEndDate',mIndexEnd)"/>
+  </div>
+ 
+
+  </td>
+</tr>
+
+<tr>
+<td><label>{{ConditionDateLabel}}</label></td>
+<td>
+<select class='qui-select qirby-select slct' ng-model="mConditionStartOption" ng-change="onChangeSelect(mConditionStartOption,'Start')">
+  <option value = "Date">{{dateLabel}}</option>
+  <option value = "Number">{{numberLabel}}</option>
+</select>
+<div ng-show="mConditionStartOption == 'Date'" style=";padding-left:3%; float:left;">
+  <input name="myDate"  type="date" style="height:50%;"  min={{ConditionRangeStartDate}} max={{ConditionRangeEndDate}} ng-model="mConditionStart" 
+   ng-model-options="{updateOn: 'blur'}" ng-blur="ondateChange('vConditionStartDate',mConditionStart)"/>
+  </div>
+  <div ng-show="mConditionStartOption == 'Number'" style="width:65%;padding-left:3%; float:left;">
+  <input style="width:40%; float:left;" class="qui-input qirby-input" type="number" ng-model="mStartOffset"
+  ng-blur="setValue(mStartOffset,'vConditionStartOffset')"/>  
+    <div style="width:50%;  float:left;padding-left:3%;">
+     <b>{{OffsetUnit}}</b>
+    </div>
+  </div>  
+</td>
+<td style="width:30px;"><label class="tolabel">to</label> </td>
+
+<td><select class='qui-select qirby-select slct' ng-model="mConditionEndOption" ng-change="onChangeSelect(mConditionEndOption,'End')">
+  <option value = "Date">{{dateLabel}}</option>
+  <option value = "Number">{{numberLabel}}</option>
+</select>
+<div ng-show="mConditionEndOption == 'Date'" style="padding-left:3%;float:left;">
+  <input name="myDate" class="qui-input qirby-input" type="date"  style="height:50%" min={{ConditionEndDateMin}} max={{ConditionRangeEndDate}} style="width:98%; height:100%"
+  ng-model="mConditionEnd"  ng-model-options="{updateOn: 'blur'}" ng-blur="ondateChange('vConditionEndDate',mConditionEnd)"/>
+</div>
+<div ng-show="mConditionEndOption == 'Number'" style="width:65%; padding-left:3%;float:left;">
+  <input style="width:40%; float:left;" class="qui-input qirby-input" type="number" ng-model="mEndOffset" ng-blur="setValue(mEndOffset,'vConditionEndOffset')"/>  
+    <div style="width:50%;  float:left;padding-left:3%;">
+     <b>{{OffsetUnit}}</b>
+    </div>
+</div>  
+</td>
+</tr>
+
+
+
+
+</table>
+
+</div>
+
